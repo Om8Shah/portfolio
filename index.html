@@ -3,38 +3,186 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Om Shah</title>
-  <meta name="description" content="Om Shah — Computer Engineering student building toward product management." />
+  <title>Om Shah — Product</title>
+  <meta name="description" content="Om Shah — Computer Engineering student at Texas A&M building toward product management. Projects, experience, and skills." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <nav class="nav">
+    <a class="nav-name" href="#top">Om Shah</a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
   <main class="wrap">
 
-    <header class="intro">
+    <header id="top" class="intro">
+      <p class="eyebrow">Computer Engineering @ Texas A&amp;M</p>
       <h1>Om Shah</h1>
       <p class="bio">
-        Computer Engineering student at Texas A&amp;M, building toward product management.
-        I like turning rough ideas into small, working apps.
+        I build and design products end to end — from user research and PRDs to shipped mobile apps.
+        Currently studying Computer Engineering at Texas A&amp;M, working toward product management.
       </p>
+      <div class="hero-links">
+        <a href="#work" class="btn btn-primary">See my work</a>
+        <a href="Om_Shah_Resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Resume</a>
+      </div>
     </header>
 
-    <section class="projects">
-      <a class="project" href="https://github.com/omshah/skinlens" target="_blank" rel="noopener">
-        <div class="project-name">SkinLens</div>
-        <div class="project-desc">AI skin condition analysis app — cross-references Gemini and GPT-4o for a second opinion on the same image.</div>
-      </a>
+    <section id="work" class="section">
+      <h2 class="section-title">Selected work</h2>
 
-      <a class="project" href="https://github.com/omshah/barter" target="_blank" rel="noopener">
-        <div class="project-name">Barter</div>
-        <div class="project-desc">Peer-to-peer trading app for college students, built with React Native and Expo.</div>
-      </a>
+      <div class="projects">
+
+        <article class="project">
+          <div class="project-head">
+            <h3>Aegis AI</h3>
+            <span class="project-year">2026</span>
+          </div>
+          <p class="project-tagline">Predictive insurance claim denial prevention tool — Ideathon 2026</p>
+          <ul class="project-points">
+            <li>Designed a desktop tool simulating payer decision logic to predict claim approval, denial, or underpayment before submission, addressing first-pass denial rates of 10–20%</li>
+            <li>Architected a three-stage pipeline — CMS-1500/PDF ingestion, an AI model simulating payer decisions, and an optimization layer generating ranked pre-submission fixes — prototyped in Figma</li>
+          </ul>
+          <div class="project-tags">
+            <span>Figma</span>
+            <span>AI/ML Prototyping</span>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <h3>Amazon Rufus AI Redesign</h3>
+            <span class="project-year">2026</span>
+          </div>
+          <p class="project-tagline">Decision-support redesign of Amazon's shopping AI assistant</p>
+          <ul class="project-points">
+            <li>Led user research identifying low visibility and lack of actionable outcomes as the core gaps limiting Rufus adoption despite high user trust</li>
+            <li>Redesigned the end-to-end flow in Figma, turning conversations into shortlists, comparison tables, and ready-to-buy carts embedded at key moments of shopping intent</li>
+          </ul>
+          <div class="project-tags">
+            <span>Figma</span>
+            <span>UX Research</span>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <h3>Barter</h3>
+            <span class="project-year">2026</span>
+          </div>
+          <p class="project-tagline">Peer-to-peer campus trading app for college students</p>
+          <ul class="project-points">
+            <li>Researched the physical-goods trading app space to define a product concept centered on trust and proximity among college students</li>
+            <li>Built a cross-platform mobile app in React Native and Expo, developed with Claude Code, covering listing creation, browsing/search, and in-app messaging between buyers and sellers</li>
+          </ul>
+          <div class="project-tags">
+            <span>React Native</span>
+            <span>Expo</span>
+          </div>
+          <a class="project-link" href="https://github.com/omshah/barter" target="_blank" rel="noopener">View on GitHub →</a>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <h3>SkinLens</h3>
+            <span class="project-year">2026</span>
+          </div>
+          <p class="project-tagline">AI-powered skin condition analysis app</p>
+          <ul class="project-points">
+            <li>Built a mobile app that queries multiple AI models (Gemini, GPT-4o) on the same image, treating each like an independent second opinion, and cross-references their diagnoses to surface a more reliable skin condition assessment</li>
+            <li>Designed a minimal, easy-to-use interface for capturing images and reviewing consolidated results</li>
+          </ul>
+          <div class="project-tags">
+            <span>React Native</span>
+            <span>Expo</span>
+            <span>Gemini</span>
+            <span>GPT-4o</span>
+          </div>
+          <a class="project-link" href="https://github.com/omshah/skinlens" target="_blank" rel="noopener">View on GitHub →</a>
+        </article>
+
+      </div>
     </section>
 
-    <footer class="links">
-      <a href="mailto:om4shah@gmail.com">Email</a>
-      <a href="https://github.com/omshah" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://linkedin.com/in/omshah" target="_blank" rel="noopener">LinkedIn</a>
+    <section id="experience" class="section">
+      <h2 class="section-title">Experience</h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-when">Fall 2025 – Present</div>
+          <div class="timeline-body">
+            <h3>Officer, Product@TAMU</h3>
+            <p class="timeline-sub">Product Development Practicum · Texas A&amp;M</p>
+            <ul class="project-points">
+              <li>Lead user research sessions for 3 product concepts: conducted interviews, synthesized insights, and drafted feature proposals in PRD format</li>
+              <li>Organize workshops on product thinking and roadmapping for 50+ members; collaborate with engineers and designers to scope and prototype a campus resource discovery app</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-when">Summer 2026 – Present</div>
+          <div class="timeline-body">
+            <h3>SAT Tutor</h3>
+            <p class="timeline-sub">Independent</p>
+            <ul class="project-points">
+              <li>Tutor multiple students in twice-weekly sessions, running diagnostics and developing curriculum frameworks aligned to the Digital SAT's adaptive module structure and pacing</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-when">Fall 2025 – Present</div>
+          <div class="timeline-body">
+            <h3>Advanced Robotics Project</h3>
+            <p class="timeline-sub">Turtle Robotics (Advanced Track) · Texas A&amp;M</p>
+            <ul class="project-points">
+              <li>Selected for the advanced project track; develop autonomous behaviors for a custom robot platform in Python using sensor feedback loops</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2 class="section-title">Skills</h2>
+
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>Languages</h3>
+          <p>Python, Java, C++, JavaScript/TypeScript, SQL</p>
+        </div>
+        <div class="skill-group">
+          <h3>Frameworks &amp; Tools</h3>
+          <p>React Native, Expo, Pandas, NetworkX, Git/GitHub, Figma, Excel, Claude Code</p>
+        </div>
+        <div class="skill-group">
+          <h3>Product</h3>
+          <p>User research, PRDs, roadmapping, prototyping</p>
+        </div>
+        <div class="skill-group">
+          <h3>Certifications</h3>
+          <p>AWS Certified AI Practitioner (in progress), Deep Learning Specialization — DeepLearning.AI (in progress)</p>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contact" class="section contact">
+      <h2 class="section-title">Contact</h2>
+      <p class="bio">Open to product and engineering internships — happy to chat.</p>
+      <div class="links">
+        <a href="mailto:om4shah@gmail.com">Email</a>
+        <a href="https://github.com/omshah" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/om-shah-8268a027b" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
     </footer>
 
   </main>
