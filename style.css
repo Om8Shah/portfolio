@@ -1,0 +1,112 @@
+:root {
+  --bg: #ffffff;
+  --fg: #111111;
+  --muted: #666666;
+  --accent: #111111;
+  --max-width: 640px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b0b0b;
+    --fg: #f2f2f2;
+    --muted: #9a9a9a;
+    --accent: #f2f2f2;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 20vh 24px 10vh;
+}
+
+.intro h1 {
+  font-size: clamp(2.25rem, 6vw, 3.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px;
+}
+
+.bio {
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin: 0 0 64px;
+  max-width: 46ch;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 64px;
+  border-top: 1px solid rgba(128, 128, 128, 0.25);
+}
+
+.project {
+  display: block;
+  padding: 20px 0;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.25);
+  transition: opacity 0.15s ease;
+}
+
+.project:hover {
+  opacity: 0.6;
+}
+
+.project-name {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.project-desc {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.links {
+  display: flex;
+  gap: 24px;
+}
+
+.links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.95rem;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+}
+
+.links a:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 480px) {
+  .wrap {
+    padding-top: 14vh;
+  }
+  .links {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+}
