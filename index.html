@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Om Shah — Product</title>
   <meta name="description" content="Om Shah — Computer Engineering student at Texas A&M building toward product management. Projects, experience, and skills." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -19,20 +22,49 @@
     </div>
   </nav>
 
-  <main class="wrap">
+  <header id="top" class="hero">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-crosshair" aria-hidden="true">
+        <div class="hero-crosshair-v"></div>
+        <div class="hero-crosshair-h"></div>
+        <div class="hero-coords">X:0000 Y:0000</div>
+      </div>
 
-    <header id="top" class="intro">
-      <p class="eyebrow">Computer Engineering @ Texas A&amp;M</p>
-      <h1>Om Shah</h1>
-      <p class="bio">
-        I build and design products end to end — from user research and PRDs to shipped mobile apps.
-        Currently studying Computer Engineering at Texas A&amp;M, working toward product management.
-      </p>
-      <div class="hero-links">
-        <a href="#work" class="btn btn-primary">See my work</a>
-        <a href="Om_Shah_Resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Resume</a>
+      <div class="hero-content">
+        <div class="hero-status">
+          <span class="hero-dot"></span>
+          Open to product &amp; engineering internships
+        </div>
+
+        <p class="hero-tag">FIG. 01 — B.S. COMPUTER ENGINEERING · TEXAS A&amp;M</p>
+
+        <h1 class="hero-name">
+          <span class="hero-name-line">Om</span>
+          <span class="hero-name-line">Shah</span>
+        </h1>
+
+        <p class="hero-role">
+          <span class="hero-role-text" id="heroRole">Computer Engineer</span><span class="hero-caret">_</span>
+        </p>
+
+        <p class="bio hero-bio">
+          I build and design products end to end — from user research and PRDs to shipped mobile apps.
+          Currently studying Computer Engineering at Texas A&amp;M, working toward product management.
+        </p>
+
+        <div class="hero-links">
+          <a href="#work" class="btn btn-primary">See my work</a>
+          <a href="Om_Shah_Resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Resume</a>
+        </div>
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <span>SCROLL</span>
+        <div class="hero-scroll-line"></div>
       </div>
     </header>
+
+  <main class="wrap">
 
     <section id="work" class="section">
       <h2 class="section-title">Selected work</h2>
@@ -186,6 +218,92 @@
     </footer>
 
   </main>
+
+  <script>
+    (function () {
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var hero = document.getElementById('top');
+      if (!hero) return;
+
+      // Cursor-tracked crosshair + spotlight over the blueprint grid
+      var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+      if (fine && !reduceMotion) {
+        var crosshairV = hero.querySelector('.hero-crosshair-v');
+        var crosshairH = hero.querySelector('.hero-crosshair-h');
+        var coords = hero.querySelector('.hero-coords');
+
+        hero.addEventListener('mousemove', function (e) {
+          var rect = hero.getBoundingClientRect();
+          var x = e.clientX - rect.left;
+          var y = e.clientY - rect.top;
+          hero.style.setProperty('--mx', x + 'px');
+          hero.style.setProperty('--my', y + 'px');
+          if (crosshairV) crosshairV.style.transform = 'translateX(' + x + 'px)';
+          if (crosshairH) crosshairH.style.transform = 'translateY(' + y + 'px)';
+          if (coords) {
+            var xu = Math.max(0, Math.round(x)).toString().padStart(4, '0');
+            var yu = Math.max(0, Math.round(y)).toString().padStart(4, '0');
+            coords.textContent = 'X:' + xu + ' Y:' + yu;
+            coords.style.left = (x + 14) + 'px';
+            coords.style.top = (y + 14) + 'px';
+          }
+        });
+
+        hero.addEventListener('mouseleave', function () {
+          hero.style.setProperty('--mx', '-9999px');
+          hero.style.setProperty('--my', '-9999px');
+        });
+      }
+
+      // Cycling role text
+      var roleEl = document.getElementById('heroRole');
+      var roles = ['Computer Engineer', 'Product Builder', 'Robot Tinkerer', 'PRD Writer'];
+
+      if (roleEl && !reduceMotion) {
+        var roleIndex = 0;
+
+        function typeRole(text, cb) {
+          roleEl.textContent = '';
+          var i = 0;
+          (function step() {
+            if (i <= text.length) {
+              roleEl.textContent = text.slice(0, i);
+              i++;
+              setTimeout(step, 38);
+            } else if (cb) {
+              setTimeout(cb, 1400);
+            }
+          })();
+        }
+
+        function eraseRole(cb) {
+          var text = roleEl.textContent;
+          (function step() {
+            if (text.length > 0) {
+              text = text.slice(0, -1);
+              roleEl.textContent = text;
+              setTimeout(step, 22);
+            } else if (cb) {
+              cb();
+            }
+          })();
+        }
+
+        function cycle() {
+          typeRole(roles[roleIndex], function () {
+            eraseRole(function () {
+              roleIndex = (roleIndex + 1) % roles.length;
+              cycle();
+            });
+          });
+        }
+
+        cycle();
+      } else if (roleEl) {
+        roleEl.textContent = roles[0];
+      }
+    })();
+  </script>
 
 </body>
 </html>
