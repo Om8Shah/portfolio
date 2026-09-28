@@ -181,7 +181,7 @@ body {
   position: absolute;
   left: -9999px;
   top: -9999px;
-  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.72rem;
   color: var(--hero-accent);
   white-space: nowrap;
@@ -199,7 +199,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.72rem;
   letter-spacing: 0.03em;
   color: var(--hero-muted);
@@ -225,7 +225,7 @@ body {
 }
 
 .hero-tag {
-  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.78rem;
   letter-spacing: 0.08em;
   color: var(--hero-accent);
@@ -233,8 +233,8 @@ body {
 }
 
 .hero-name {
-  font-family: "Sora", -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: 800;
+  font-family: "Archivo", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 900;
   font-size: clamp(3.25rem, 11vw, 6.5rem);
   line-height: 0.95;
   letter-spacing: -0.03em;
@@ -262,7 +262,7 @@ body {
 }
 
 .hero-role {
-  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: clamp(1rem, 2.4vw, 1.25rem);
   color: var(--hero-fg);
   margin: 0 0 24px;
@@ -310,7 +310,7 @@ body {
   align-items: center;
   gap: 8px;
   padding-bottom: 28px;
-  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.68rem;
   letter-spacing: 0.12em;
   color: var(--hero-muted);
