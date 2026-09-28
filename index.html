@@ -7,177 +7,216 @@
   <meta name="description" content="Om Shah — Computer Engineering student at Texas A&M building toward product management. Projects, experience, and skills." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <nav class="nav">
-    <a class="nav-name" href="#top">Om Shah</a>
-    <div class="nav-links">
-      <a href="#work">Work</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
+    <a class="nav-brand" href="#top">
+      <span class="nav-mark">OS</span>
+      <span class="nav-brand-text">
+        <span class="nav-name">Om Shah</span>
+        <span class="nav-role">Computer Engineer</span>
+      </span>
+    </a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-clock" id="navClock">00:00:00</div>
     </div>
   </nav>
 
   <header id="top" class="hero">
-      <div class="hero-grid" aria-hidden="true"></div>
-      <div class="hero-crosshair" aria-hidden="true">
-        <div class="hero-crosshair-v"></div>
-        <div class="hero-crosshair-h"></div>
-        <div class="hero-coords">X:0000 Y:0000</div>
-      </div>
+    <div class="grid-bg" aria-hidden="true"></div>
 
-      <div class="hero-content">
-        <div class="hero-status">
-          <span class="hero-dot"></span>
-          Open to product &amp; engineering internships
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <div class="chip">
+          <span class="chip-dot"></span>
+          OPEN TO PRODUCT &amp; ENGINEERING INTERNSHIPS
         </div>
 
-        <p class="hero-tag">FIG. 01 — B.S. COMPUTER ENGINEERING · TEXAS A&amp;M</p>
-
-        <h1 class="hero-name">
-          <span class="hero-name-line">Om</span>
-          <span class="hero-name-line">Shah</span>
+        <h1 class="hero-heading">
+          Designing <span class="muted">mobile products</span> backed by real user research.
         </h1>
 
-        <p class="hero-role">
-          <span class="hero-role-text" id="heroRole">Computer Engineer</span><span class="hero-caret">_</span>
-        </p>
-
-        <p class="bio hero-bio">
-          I build and design products end to end — from user research and PRDs to shipped mobile apps.
+        <p class="hero-bio">
+          I build and design products end to end — from user interviews and PRDs to shipped mobile apps.
           Currently studying Computer Engineering at Texas A&amp;M, working toward product management.
         </p>
 
-        <div class="hero-links">
-          <a href="#work" class="btn btn-primary">See my work</a>
-          <a href="Om_Shah_Resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Resume</a>
+        <div class="tag-row">
+          <span class="tag"><svg viewBox="0 0 24 24" class="tag-icon"><path d="M4 19h16M4 15l4-5 4 3 4-7 4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PRODUCT RESEARCH</span>
+          <span class="tag"><svg viewBox="0 0 24 24" class="tag-icon"><rect x="6" y="3" width="12" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><line x1="10" y1="19" x2="14" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>MOBILE ENGINEERING</span>
+          <span class="tag"><svg viewBox="0 0 24 24" class="tag-icon"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>AI PROTOTYPING</span>
+        </div>
+
+        <div class="cta-row">
+          <a href="#work" class="btn btn-primary">EXPLORE PROJECTS <span class="arrow-down">↓</span></a>
+          <a href="Om_Shah_Resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener">VIEW RESUME</a>
         </div>
       </div>
 
-      <div class="hero-scroll" aria-hidden="true">
-        <span>SCROLL</span>
-        <div class="hero-scroll-line"></div>
+      <div class="hero-visual">
+        <div class="avatar-card">
+          <div class="avatar-mono">OS</div>
+          <div class="avatar-info">
+            <div class="avatar-info-top">
+              <span class="chip-dot small"></span>
+              COMPUTER ENGINEERING · TEXAS A&amp;M
+            </div>
+            <div class="avatar-info-sub">CLASS OF 2028 · GPA 3.5</div>
+          </div>
+        </div>
       </div>
-    </header>
+    </div>
+  </header>
 
   <main class="wrap">
 
     <section id="work" class="section">
-      <h2 class="section-title">Selected work</h2>
+      <p class="eyebrow">SELECTED PRODUCT &amp; ENGINEERING // WORK</p>
+      <h2 class="section-heading">Concepts and apps built from research to working prototype.</h2>
 
       <div class="projects">
 
-        <article class="project">
-          <div class="project-head">
-            <h3>Aegis AI</h3>
-            <span class="project-year">2026</span>
+        <article class="project-card">
+          <div class="project-card-top">
+            <span class="project-kicker">AI / ML PROTOTYPING</span>
+            <span class="dot-marker"></span>
           </div>
-          <p class="project-tagline">Predictive insurance claim denial prevention tool — Ideathon 2026</p>
-          <ul class="project-points">
-            <li>Designed a desktop tool simulating payer decision logic to predict claim approval, denial, or underpayment before submission, addressing first-pass denial rates of 10–20%</li>
-            <li>Architected a three-stage pipeline — CMS-1500/PDF ingestion, an AI model simulating payer decisions, and an optimization layer generating ranked pre-submission fixes — prototyped in Figma</li>
-          </ul>
-          <div class="project-tags">
-            <span>Figma</span>
-            <span>AI/ML Prototyping</span>
-          </div>
+          <h3 class="project-title">Aegis AI</h3>
+          <p class="project-subtitle">PREDICTIVE INSURANCE CLAIM DENIAL PREVENTION TOOL — IDEATHON 2026</p>
+          <p class="project-desc">
+            Designed a desktop tool simulating payer decision logic to predict claim approval, denial, or underpayment before submission, addressing first-pass denial rates of 10–20%. Architected a three-stage pipeline — CMS-1500/PDF ingestion, an AI model simulating payer decisions, and an optimization layer generating ranked pre-submission fixes — prototyped in Figma.
+          </p>
+          <hr class="project-rule" />
+          <span class="project-link-static">FIGMA PROTOTYPE — NOT PUBLICLY LINKED</span>
         </article>
 
-        <article class="project">
-          <div class="project-head">
-            <h3>Amazon Rufus AI Redesign</h3>
-            <span class="project-year">2026</span>
+        <article class="project-card">
+          <div class="project-card-top">
+            <span class="project-kicker">UX RESEARCH</span>
+            <span class="dot-marker"></span>
           </div>
-          <p class="project-tagline">Decision-support redesign of Amazon's shopping AI assistant</p>
-          <ul class="project-points">
-            <li>Led user research identifying low visibility and lack of actionable outcomes as the core gaps limiting Rufus adoption despite high user trust</li>
-            <li>Redesigned the end-to-end flow in Figma, turning conversations into shortlists, comparison tables, and ready-to-buy carts embedded at key moments of shopping intent</li>
-          </ul>
-          <div class="project-tags">
-            <span>Figma</span>
-            <span>UX Research</span>
-          </div>
+          <h3 class="project-title">Amazon Rufus AI Redesign</h3>
+          <p class="project-subtitle">DECISION-SUPPORT REDESIGN OF AMAZON'S SHOPPING AI ASSISTANT</p>
+          <p class="project-desc">
+            Led user research identifying low visibility and lack of actionable outcomes as the core gaps limiting Rufus adoption despite high user trust. Redesigned the end-to-end flow in Figma, turning conversations into shortlists, comparison tables, and ready-to-buy carts embedded at key moments of shopping intent.
+          </p>
+          <hr class="project-rule" />
+          <span class="project-link-static">FIGMA PROTOTYPE — NOT PUBLICLY LINKED</span>
         </article>
 
-        <article class="project">
-          <div class="project-head">
-            <h3>Barter</h3>
-            <span class="project-year">2026</span>
+        <article class="project-card">
+          <div class="project-card-top">
+            <span class="project-kicker">REACT NATIVE · EXPO</span>
+            <span class="dot-marker"></span>
           </div>
-          <p class="project-tagline">Peer-to-peer campus trading app for college students</p>
-          <ul class="project-points">
-            <li>Researched the physical-goods trading app space to define a product concept centered on trust and proximity among college students</li>
-            <li>Built a cross-platform mobile app in React Native and Expo, developed with Claude Code, covering listing creation, browsing/search, and in-app messaging between buyers and sellers</li>
-          </ul>
-          <div class="project-tags">
-            <span>React Native</span>
-            <span>Expo</span>
-          </div>
-          <a class="project-link" href="https://github.com/omshah/barter" target="_blank" rel="noopener">View on GitHub →</a>
+          <h3 class="project-title">Barter</h3>
+          <p class="project-subtitle">PEER-TO-PEER CAMPUS TRADING APP FOR COLLEGE STUDENTS</p>
+          <p class="project-desc">
+            Researched the physical-goods trading app space to define a product concept centered on trust and proximity among college students. Built a cross-platform mobile app in React Native and Expo, developed with Claude Code, covering listing creation, browsing/search, and in-app messaging between buyers and sellers.
+          </p>
+          <hr class="project-rule" />
+          <a class="project-link" href="https://github.com/Om8Shah" target="_blank" rel="noopener">EXPLORE PROJECT <span class="arrow-right">→</span></a>
         </article>
 
-        <article class="project">
-          <div class="project-head">
-            <h3>SkinLens</h3>
-            <span class="project-year">2026</span>
+        <article class="project-card">
+          <div class="project-card-top">
+            <span class="project-kicker">REACT NATIVE · GEMINI · GPT-4O</span>
+            <span class="dot-marker"></span>
           </div>
-          <p class="project-tagline">AI-powered skin condition analysis app</p>
-          <ul class="project-points">
-            <li>Built a mobile app that queries multiple AI models (Gemini, GPT-4o) on the same image, treating each like an independent second opinion, and cross-references their diagnoses to surface a more reliable skin condition assessment</li>
-            <li>Designed a minimal, easy-to-use interface for capturing images and reviewing consolidated results</li>
-          </ul>
-          <div class="project-tags">
-            <span>React Native</span>
-            <span>Expo</span>
-            <span>Gemini</span>
-            <span>GPT-4o</span>
-          </div>
-          <a class="project-link" href="https://github.com/omshah/skinlens" target="_blank" rel="noopener">View on GitHub →</a>
+          <h3 class="project-title">SkinLens</h3>
+          <p class="project-subtitle">AI-POWERED SKIN CONDITION ANALYSIS APP</p>
+          <p class="project-desc">
+            Built a mobile app that queries multiple AI models (Gemini, GPT-4o) on the same image, treating each like an independent second opinion, and cross-references their diagnoses to surface a more reliable skin condition assessment. Designed a minimal, easy-to-use interface for capturing images and reviewing consolidated results.
+          </p>
+          <hr class="project-rule" />
+          <a class="project-link" href="https://github.com/Om8Shah" target="_blank" rel="noopener">EXPLORE PROJECT <span class="arrow-right">→</span></a>
         </article>
 
       </div>
     </section>
 
     <section id="experience" class="section">
-      <h2 class="section-title">Experience</h2>
+      <p class="eyebrow">PROFESSIONAL TIMELINE</p>
+      <h2 class="section-heading">Leading product research and shipping apps alongside coursework.</h2>
+
+      <div class="focus-cards">
+        <div class="focus-card">
+          <div class="focus-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 19h16M4 15l4-5 4 3 4-7 4 4" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <div class="focus-title">PRODUCT TOOLKIT</div>
+            <div class="focus-desc">User research, PRDs, roadmapping, prototyping.</div>
+          </div>
+        </div>
+        <div class="focus-card">
+          <div class="focus-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2" fill="none" stroke="white" stroke-width="2"/><path d="M8 21h8M12 18v3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <div class="focus-title">TECHNICAL STACK</div>
+            <div class="focus-desc">Python, Java, C++, JS/TS, SQL, React Native, Expo, Figma.</div>
+          </div>
+        </div>
+      </div>
 
       <div class="timeline">
 
         <div class="timeline-item">
-          <div class="timeline-when">Fall 2025 – Present</div>
+          <span class="timeline-marker"></span>
           <div class="timeline-body">
-            <h3>Officer, Product@TAMU</h3>
-            <p class="timeline-sub">Product Development Practicum · Texas A&amp;M</p>
-            <ul class="project-points">
-              <li>Lead user research sessions for 3 product concepts: conducted interviews, synthesized insights, and drafted feature proposals in PRD format</li>
-              <li>Organize workshops on product thinking and roadmapping for 50+ members; collaborate with engineers and designers to scope and prototype a campus resource discovery app</li>
-            </ul>
+            <h3 class="timeline-role">Officer, Product@TAMU</h3>
+            <p class="timeline-org">Product Development Practicum <span class="sep">·</span> <span class="loc">TEXAS A&amp;M</span></p>
+            <div class="timeline-date"><svg viewBox="0 0 24 24" class="date-icon"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>FALL 2025 – PRESENT</div>
+            <p class="timeline-desc">
+              Lead user research sessions for 3 product concepts: conducted interviews, synthesized insights, and drafted feature proposals in PRD format. Organize workshops on product thinking and roadmapping for 50+ members; collaborate with engineers and designers to scope and prototype a campus resource discovery app.
+            </p>
+            <div class="tag-row small">
+              <span class="tag">USER RESEARCH</span>
+              <span class="tag">PRDS</span>
+              <span class="tag">ROADMAPPING</span>
+            </div>
           </div>
         </div>
 
         <div class="timeline-item">
-          <div class="timeline-when">Summer 2026 – Present</div>
+          <span class="timeline-marker"></span>
           <div class="timeline-body">
-            <h3>SAT Tutor</h3>
-            <p class="timeline-sub">Independent</p>
-            <ul class="project-points">
-              <li>Tutor multiple students in twice-weekly sessions, running diagnostics and developing curriculum frameworks aligned to the Digital SAT's adaptive module structure and pacing</li>
-            </ul>
+            <h3 class="timeline-role">SAT Tutor</h3>
+            <p class="timeline-org">Independent <span class="sep">·</span> <span class="loc">PLANO, TX</span></p>
+            <div class="timeline-date"><svg viewBox="0 0 24 24" class="date-icon"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>SUMMER 2026 – PRESENT</div>
+            <p class="timeline-desc">
+              Tutor multiple students in twice-weekly sessions, running diagnostics and developing curriculum frameworks aligned to the Digital SAT's adaptive module structure and pacing.
+            </p>
+            <div class="tag-row small">
+              <span class="tag">CURRICULUM DESIGN</span>
+              <span class="tag">DIAGNOSTICS</span>
+            </div>
           </div>
         </div>
 
         <div class="timeline-item">
-          <div class="timeline-when">Fall 2025 – Present</div>
+          <span class="timeline-marker"></span>
           <div class="timeline-body">
-            <h3>Advanced Robotics Project</h3>
-            <p class="timeline-sub">Turtle Robotics (Advanced Track) · Texas A&amp;M</p>
-            <ul class="project-points">
-              <li>Selected for the advanced project track; develop autonomous behaviors for a custom robot platform in Python using sensor feedback loops</li>
-            </ul>
+            <h3 class="timeline-role">Advanced Robotics Project</h3>
+            <p class="timeline-org">Turtle Robotics (Advanced Track) <span class="sep">·</span> <span class="loc">TEXAS A&amp;M</span></p>
+            <div class="timeline-date"><svg viewBox="0 0 24 24" class="date-icon"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>FALL 2025 – PRESENT</div>
+            <p class="timeline-desc">
+              Selected for the advanced project track; develop autonomous behaviors for a custom robot platform in Python using sensor feedback loops.
+            </p>
+            <div class="tag-row small">
+              <span class="tag">PYTHON</span>
+              <span class="tag">EMBEDDED SYSTEMS</span>
+            </div>
           </div>
         </div>
 
@@ -185,35 +224,28 @@
     </section>
 
     <section id="skills" class="section">
-      <h2 class="section-title">Skills</h2>
+      <p class="eyebrow">CERTIFICATIONS &amp; LANGUAGES</p>
+      <h2 class="section-heading">Currently building toward AWS and Deep Learning certifications.</h2>
 
       <div class="skills-grid">
         <div class="skill-group">
-          <h3>Languages</h3>
-          <p>Python, Java, C++, JavaScript/TypeScript, SQL</p>
+          <div class="skill-group-title">CERTIFICATIONS (IN PROGRESS)</div>
+          <p>AWS Certified AI Practitioner, Deep Learning Specialization — DeepLearning.AI</p>
         </div>
         <div class="skill-group">
-          <h3>Frameworks &amp; Tools</h3>
-          <p>React Native, Expo, Pandas, NetworkX, Git/GitHub, Figma, Excel, Claude Code</p>
-        </div>
-        <div class="skill-group">
-          <h3>Product</h3>
-          <p>User research, PRDs, roadmapping, prototyping</p>
-        </div>
-        <div class="skill-group">
-          <h3>Certifications</h3>
-          <p>AWS Certified AI Practitioner (in progress), Deep Learning Specialization — DeepLearning.AI (in progress)</p>
+          <div class="skill-group-title">LANGUAGES</div>
+          <p>English (fluent), Spanish, Hindi, Gujarati (conversational)</p>
         </div>
       </div>
     </section>
 
     <footer id="contact" class="section contact">
-      <h2 class="section-title">Contact</h2>
-      <p class="bio">Open to product and engineering internships — happy to chat.</p>
+      <p class="eyebrow">GET IN TOUCH</p>
+      <h2 class="section-heading">Open to product and engineering internships.</h2>
       <div class="links">
-        <a href="mailto:om4shah@gmail.com">Email</a>
-        <a href="https://github.com/omshah" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://linkedin.com/in/om-shah-8268a027b" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:om4shah@gmail.com" class="btn btn-ghost">EMAIL</a>
+        <a href="https://github.com/Om8Shah" target="_blank" rel="noopener" class="btn btn-ghost">GITHUB</a>
+        <a href="https://linkedin.com/in/om-shah-8268a027b" target="_blank" rel="noopener" class="btn btn-ghost">LINKEDIN</a>
       </div>
     </footer>
 
@@ -221,87 +253,17 @@
 
   <script>
     (function () {
-      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var hero = document.getElementById('top');
-      if (!hero) return;
-
-      // Cursor-tracked crosshair + spotlight over the blueprint grid
-      var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-      if (fine && !reduceMotion) {
-        var crosshairV = hero.querySelector('.hero-crosshair-v');
-        var crosshairH = hero.querySelector('.hero-crosshair-h');
-        var coords = hero.querySelector('.hero-coords');
-
-        hero.addEventListener('mousemove', function (e) {
-          var rect = hero.getBoundingClientRect();
-          var x = e.clientX - rect.left;
-          var y = e.clientY - rect.top;
-          hero.style.setProperty('--mx', x + 'px');
-          hero.style.setProperty('--my', y + 'px');
-          if (crosshairV) crosshairV.style.transform = 'translateX(' + x + 'px)';
-          if (crosshairH) crosshairH.style.transform = 'translateY(' + y + 'px)';
-          if (coords) {
-            var xu = Math.max(0, Math.round(x)).toString().padStart(4, '0');
-            var yu = Math.max(0, Math.round(y)).toString().padStart(4, '0');
-            coords.textContent = 'X:' + xu + ' Y:' + yu;
-            coords.style.left = (x + 14) + 'px';
-            coords.style.top = (y + 14) + 'px';
-          }
-        });
-
-        hero.addEventListener('mouseleave', function () {
-          hero.style.setProperty('--mx', '-9999px');
-          hero.style.setProperty('--my', '-9999px');
-        });
+      var clock = document.getElementById('navClock');
+      if (!clock) return;
+      function tick() {
+        var d = new Date();
+        var hh = String(d.getHours()).padStart(2, '0');
+        var mm = String(d.getMinutes()).padStart(2, '0');
+        var ss = String(d.getSeconds()).padStart(2, '0');
+        clock.textContent = hh + ':' + mm + ':' + ss;
       }
-
-      // Cycling role text
-      var roleEl = document.getElementById('heroRole');
-      var roles = ['Computer Engineer', 'Product Builder', 'Robot Tinkerer', 'PRD Writer'];
-
-      if (roleEl && !reduceMotion) {
-        var roleIndex = 0;
-
-        function typeRole(text, cb) {
-          roleEl.textContent = '';
-          var i = 0;
-          (function step() {
-            if (i <= text.length) {
-              roleEl.textContent = text.slice(0, i);
-              i++;
-              setTimeout(step, 38);
-            } else if (cb) {
-              setTimeout(cb, 1400);
-            }
-          })();
-        }
-
-        function eraseRole(cb) {
-          var text = roleEl.textContent;
-          (function step() {
-            if (text.length > 0) {
-              text = text.slice(0, -1);
-              roleEl.textContent = text;
-              setTimeout(step, 22);
-            } else if (cb) {
-              cb();
-            }
-          })();
-        }
-
-        function cycle() {
-          typeRole(roles[roleIndex], function () {
-            eraseRole(function () {
-              roleIndex = (roleIndex + 1) % roles.length;
-              cycle();
-            });
-          });
-        }
-
-        cycle();
-      } else if (roleEl) {
-        roleEl.textContent = roles[0];
-      }
+      tick();
+      setInterval(tick, 1000);
     })();
   </script>
 
