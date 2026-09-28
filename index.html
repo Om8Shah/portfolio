@@ -12,6 +12,15 @@
 </head>
 <body>
 
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <nav class="dot-nav" id="dotNav">
+    <a href="#work" data-target="work"><span class="dot-label">Work</span></a>
+    <a href="#experience" data-target="experience"><span class="dot-label">Experience</span></a>
+    <a href="#skills" data-target="skills"><span class="dot-label">Skills</span></a>
+    <a href="#contact" data-target="contact"><span class="dot-label">Contact</span></a>
+  </nav>
+
   <nav class="nav">
     <a class="nav-brand" href="#top">
       <span class="nav-mark">OS</span>
@@ -42,13 +51,14 @@
   <header id="top" class="hero">
     <div class="grid-bg" aria-hidden="true">
       <div class="grid-spot" id="gridSpot"></div>
+      <div class="coord-readout" id="coordReadout">X: 0000 Y: 0000</div>
     </div>
 
     <div class="wrap hero-inner">
       <div class="hero-copy">
         <div class="chip">
           <span class="chip-dot"></span>
-          OPEN TO PRODUCT &amp; ENGINEERING INTERNSHIPS
+          <span id="heroChipText" data-scramble="OPEN TO PRODUCT &amp; ENGINEERING INTERNSHIPS">OPEN TO PRODUCT &amp; ENGINEERING INTERNSHIPS</span>
         </div>
 
         <h1 class="hero-heading">
@@ -90,7 +100,7 @@
   <main class="wrap">
 
     <section id="work" class="section">
-      <p class="eyebrow">SELECTED PRODUCT &amp; ENGINEERING // WORK</p>
+      <p class="eyebrow scramble-target">SELECTED PRODUCT &amp; ENGINEERING // WORK</p>
       <h2 class="section-heading reveal">Concepts and apps built from research to working prototype.</h2>
 
       <div class="projects">
@@ -155,7 +165,7 @@
     </section>
 
     <section id="experience" class="section">
-      <p class="eyebrow">PROFESSIONAL TIMELINE</p>
+      <p class="eyebrow scramble-target">PROFESSIONAL TIMELINE</p>
       <h2 class="section-heading reveal">Leading product research and shipping apps alongside coursework.</h2>
 
       <div class="focus-cards">
@@ -234,7 +244,7 @@
     </section>
 
     <section id="skills" class="section">
-      <p class="eyebrow">CERTIFICATIONS &amp; LANGUAGES</p>
+      <p class="eyebrow scramble-target">CERTIFICATIONS &amp; LANGUAGES</p>
       <h2 class="section-heading reveal">Currently building toward AWS and Deep Learning certifications.</h2>
 
       <div class="skills-grid">
@@ -250,7 +260,7 @@
     </section>
 
     <footer id="contact" class="section contact">
-      <p class="eyebrow">GET IN TOUCH</p>
+      <p class="eyebrow scramble-target">GET IN TOUCH</p>
       <h2 class="section-heading reveal">Open to product and engineering internships.</h2>
       <div class="links">
         <a href="mailto:om4shah@gmail.com" class="btn btn-ghost">EMAIL</a>
@@ -457,6 +467,145 @@
         });
       }, { threshold: 0.05, rootMargin: '0px 0px -10% 0px' });
       els.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
+
+  <script>
+    // Scroll progress bar
+    (function () {
+      var bar = document.getElementById('scrollProgress');
+      if (!bar) return;
+      function update() {
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        var max = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var pct = max > 0 ? (scrollTop / max) * 100 : 0;
+        bar.style.width = pct + '%';
+      }
+      update();
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+    })();
+  </script>
+
+  <script>
+    // Live cursor coordinate readout, blueprint-style
+    (function () {
+      var hero = document.getElementById('top');
+      var readout = document.getElementById('coordReadout');
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+      if (!hero || !readout || reduceMotion || !fine) return;
+      hero.addEventListener('mousemove', function (e) {
+        var rect = hero.getBoundingClientRect();
+        var x = Math.round(e.clientX - rect.left);
+        var y = Math.round(e.clientY - rect.top);
+        readout.textContent = 'X: ' + String(x).padStart(4, '0') + '  Y: ' + String(y).padStart(4, '0');
+        readout.style.left = x + 'px';
+        readout.style.top = y + 'px';
+        readout.classList.add('active');
+      });
+      hero.addEventListener('mouseleave', function () {
+        readout.classList.remove('active');
+      });
+    })();
+  </script>
+
+  <script>
+    // Text scramble / decode-in effect
+    (function () {
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+
+      function scramble(el, finalText, duration) {
+        if (reduceMotion) {
+          el.textContent = finalText;
+          return;
+        }
+        var frame = 0;
+        var totalFrames = Math.round(duration / 40);
+        var interval = setInterval(function () {
+          var revealedCount = Math.ceil((frame / totalFrames) * finalText.length);
+          var out = '';
+          for (var i = 0; i < finalText.length; i++) {
+            var ch = finalText[i];
+            if (ch === ' ' || i < revealedCount) {
+              out += ch;
+            } else {
+              out += CHARS[Math.floor(Math.random() * CHARS.length)];
+            }
+          }
+          el.textContent = out;
+          frame++;
+        }, 40);
+        // Hard stop: always land on the exact final text, no matter how the
+        // frame math above rounds.
+        setTimeout(function () {
+          clearInterval(interval);
+          el.textContent = finalText;
+        }, duration);
+      }
+
+      // Hero chip, once on load — slow and delayed enough to actually catch
+      var chip = document.getElementById('heroChipText');
+      if (chip) {
+        var chipFinal = chip.getAttribute('data-scramble') || chip.textContent;
+        setTimeout(function () { scramble(chip, chipFinal, 1600); }, 500);
+      }
+
+      // Eyebrow mono labels, on scroll into view
+      var targets = document.querySelectorAll('.scramble-target');
+      if (targets.length && 'IntersectionObserver' in window && !reduceMotion) {
+        var seen = new WeakSet();
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting && !seen.has(entry.target)) {
+              seen.add(entry.target);
+              var el = entry.target;
+              var finalText = el.textContent;
+              scramble(el, finalText, 900);
+              io.unobserve(el);
+            }
+          });
+        }, { threshold: 0.4 });
+        targets.forEach(function (el) { io.observe(el); });
+      }
+    })();
+  </script>
+
+  <script>
+    // Section dot-nav with scroll-spy
+    (function () {
+      var nav = document.getElementById('dotNav');
+      if (!nav) return;
+      var links = Array.prototype.slice.call(nav.querySelectorAll('a'));
+      var sections = links.map(function (a) {
+        return document.getElementById(a.getAttribute('data-target'));
+      });
+
+      function setActive(id) {
+        links.forEach(function (a) {
+          a.classList.toggle('active', a.getAttribute('data-target') === id);
+        });
+      }
+
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              setActive(entry.target.id);
+            }
+          });
+        }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+        sections.forEach(function (s) { if (s) io.observe(s); });
+      }
+
+      links.forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          var target = document.getElementById(a.getAttribute('data-target'));
+          if (target) target.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
     })();
   </script>
 
